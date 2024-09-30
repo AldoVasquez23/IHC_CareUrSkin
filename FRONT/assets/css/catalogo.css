@@ -1,0 +1,15 @@
+/* Estilos generales */
+.lnr-heart {
+    cursor: pointer;
+    color: gray;
+  }
+  
+  .lnr-frame-expand {
+    cursor: pointer;
+  }
+  
+  /* Cambia el color cuando el corazón está marcado */
+  .marked {
+    color: red;
+  }
+  

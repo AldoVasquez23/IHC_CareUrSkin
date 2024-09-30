@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Care Ur Skin</title>
+    <!-- Styles and fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/linearicons.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootsnav.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="home" class="welcome-hero">
+        <!-- Carousel -->
+        <div id="header-carousel" class="carousel slide carousel-fade" data-ride="carousel">
+            <!-- Carousel indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#header-carousel" data-slide-to="0" class="active"><span class="small-circle"></span></li>
+                <li data-target="#header-carousel" data-slide-to="1"><span class="small-circle"></span></li>
+                <li data-target="#header-carousel" data-slide-to="2"><span class="small-circle"></span></li>
+            </ol>
+            <!-- Carousel items -->
+            <div class="carousel-inner" role="listbox">
+                <!-- Carousel item 1 -->
+                <div class="item active">
+                    <div class="single-slide-item slide1">
+                        <div class="container">
+                            <div class="welcome-hero-content">
+                                <div class="row">
+                                    <div class="col-sm-7">
+                                        <div class="single-welcome-hero">
+                                            <div class="welcome-hero-txt">
+                                                <h4>Suncare Protection</h4>
+                                                <h2>SPF 30 Lotion 3.4 fl oz</h2>
+                                                <p>Las lociones de protección general Australian Gold® son perfectas para quienes desean el máximo control de aplicación para el uso diario.</p>
+                                                <div class="packages-price">
+                                                    <p>$ 6.99 <del>$ 10.00</del></p>
+                                                </div>
+                                                <button class="btn-cart welcome-add-cart">
+                                                    <span class="lnr lnr-plus-circle"></span>
+                                                    add <span>to</span> cart
+                                                </button>
+                                                <button class="btn-cart welcome-add-cart welcome-more-info">
+                                                    more info
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-5">
+                                        <div class="single-welcome-hero">
+                                            <div class="welcome-hero-img">
+                                                <img src="assets/images/slider/slider1.jpeg" alt="slider image">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Carousel item 2 -->
+                <!-- ... (similar structure for other carousel items) ... -->
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default bootsnav navbar-sticky navbar-scrollspy" data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+            <!-- ... (navigation content) ... -->
+        </nav>
+    </header>
+
+    <!-- Main Content Sections -->
+    <main>
+        <!-- Popular Products Section -->
+        <section id="populer-products" class="populer-products">
+            <!-- ... (popular products content) ... -->
+        </section>
+
+        <!-- New Arrivals Section -->
+        <section id="new-arrivals" class="new-arrivals">
+            <!-- ... (new arrivals content) ... -->
+        </section>
+
+        <!-- Featured Products Section -->
+        <section id="feature" class="feature">
+            <!-- ... (featured products content) ... -->
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="blog">
+            <!-- ... (blog content) ... -->
+        </section>
+
+        <!-- Clients Section -->
+        <section id="clients" class="clients">
+            <!-- ... (clients content) ... -->
+        </section>
+
+        <!-- Newsletter Section -->
+        <section id="newsletter" class="newsletter">
+            <!-- ... (newsletter content) ... -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <!-- ... (footer content) ... -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootsnav.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        // Carousel functionality
+        const carousel = document.querySelector('#header-carousel');
+        if (carousel) {
+            // Initialize carousel
+            // (Using a library like Bootstrap's carousel or implement custom logic)
+        }
+
+        // Navigation functionality
+        const nav = document.querySelector('nav.navbar');
+        if (nav) {
+            // Implement sticky navigation
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 100) {
+                    nav.classList.add('navbar-sticky');
+                } else {
+                    nav.classList.remove('navbar-sticky');
+                }
+            });
+        }
+
+        // Add to cart functionality
+        const addToCartButtons = document.querySelectorAll('.btn-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                // Implement add to cart logic
+                console.log('Product added to cart');
+            });
+        });
+
+        // Scroll to top functionality
+        const scrollTopButton = document.querySelector('#scroll-Top');
+        if (scrollTopButton) {
+            scrollTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Newsletter subscription
+        const newsletterForm = document.querySelector('.hm-foot-email');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                // Implement newsletter subscription logic
+                console.log('Newsletter subscription submitted');
+            });
+        }
+    });
+    </script>
+</body>
+</html>
