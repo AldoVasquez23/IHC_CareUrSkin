@@ -4,7 +4,292 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Australian Gold SPF 30 Lotion</title>
-    <link rel="stylesheet" href="./assets/css/detalle_producto.css">
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f5f0;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 4px 20px rgba(233, 156, 46, 0.1);
+            border-radius: 15px;
+        }
+
+        .breadcrumb {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 20px;
+        }
+
+        .product {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .product-images {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .main-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(233, 156, 46, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .main-image:hover {
+            transform: scale(1.03);
+        }
+
+        .thumbnails {
+            display: flex;
+            gap: 15px;
+        }
+
+        .thumbnail {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #f0e0c0;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.1);
+            border-color: #e99c2e;
+        }
+
+        .product-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        h1 {
+            margin: 0 0 15px 0;
+            font-size: 2.2em;
+            font-weight: 600;
+            color: #e99c2e;
+        }
+
+        .brand {
+            color: #999;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 2em;
+            font-weight: bold;
+            color: #e99c2e;
+            margin-bottom: 25px;
+        }
+
+        .rating {
+            margin-bottom: 25px;
+        }
+
+        .star {
+            font-size: 2.2em;
+            color: #f0e0c0;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .star.active,
+        .star.hover {
+            color: #e99c2e;
+        }
+
+        .description {
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .product-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            background-color: #f9f5f0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            background-color: #e99c2e;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1.4em;
+            transition: background-color 0.3s ease;
+        }
+
+        .quantity-btn:hover {
+            background-color: #d18a1f;
+        }
+
+        #quantity {
+            width: 60px;
+            text-align: center;
+            border: none;
+            background-color: transparent;
+            font-size: 1.2em;
+            padding: 10px;
+        }
+
+        .buttons-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .add-to-cart {
+            background-color: #e99c2e;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: #d18a1f;
+        }
+
+        .wishlist-heart {
+            font-size: 2.2em;
+            color: #f0e0c0;
+            transition: color 0.3s ease;
+            cursor: pointer;
+        }
+
+        .wishlist-heart:hover,
+        .wishlist-heart.active {
+            color: #e74c3c;
+        }
+
+        .max-quantity {
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #999;
+        }
+
+        .comments-section {
+            margin-top: 50px;
+        }
+
+        .comment-input {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        #comment {
+            flex-grow: 1;
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #f0e0c0;
+            font-size: 1.1em;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+        }
+
+        #comment:focus {
+            outline: none;
+            border-color: #e99c2e;
+        }
+
+        .submit-comment {
+            background-color: #e99c2e;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-comment:hover {
+            background-color: #d18a1f;
+        }
+
+        .comment-list {
+            margin-top: 25px;
+        }
+
+        .comment-item {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 2px solid #f0e0c0;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .comment-item:hover {
+            box-shadow: 0 4px 15px rgba(233, 156, 46, 0.1);
+        }
+
+        .comment-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .user-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #e99c2e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .user-icon::before {
+            content: '\1F464';
+            font-size: 1.5em;
+            color: white;
+        }
+
+        .comment-username {
+            font-weight: bold;
+            color: #e99c2e;
+        }
+
+        .comment-text {
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -13,13 +298,13 @@
         </div>
         <div class="product">
             <div class="product-images">
-                <img src="https://v0.dev/placeholder.svg?height=600&width=400" alt="Australian Gold SPF 30 Lotion" class="main-image">
+                <img src="https://v0.dev/placeholder.svg?height=600&width=400" alt="Australian Gold SPF 30 Lotion" class="main-image" id="main-image">
                 <div class="thumbnails">
-                    <img src="https://v0.dev/placeholder.svg?height=80&width=80" alt="Thumbnail 1" class="thumbnail">
-                    <img src="https://v0.dev/placeholder.svg?height=80&width=80" alt="Thumbnail 2" class="thumbnail">
-                    <img src="https://v0.dev/placeholder.svg?height=80&width=80" alt="Thumbnail 3" class="thumbnail">
-                    <img src="https://v0.dev/placeholder.svg?height=80&width=80" alt="Thumbnail 4" class="thumbnail">
-                    <img src="https://v0.dev/placeholder.svg?height=80&width=80" alt="Thumbnail 5" class="thumbnail">
+                    <img src="https://v0.dev/placeholder.svg?height=80&width=80" alt="Thumbnail 1" class="thumbnail" onclick="changeMainImage(this.src)">
+                    <img src="https://v0.dev/placeholder.svg?height=80&width=80" alt="Thumbnail 2" class="thumbnail" onclick="changeMainImage(this.src)">
+                    <img src="https://v0.dev/placeholder.svg?height=80&width=80" alt="Thumbnail 3" class="thumbnail" onclick="changeMainImage(this.src)">
+                    <img src="https://v0.dev/placeholder.svg?height=80&width=80" alt="Thumbnail 4" class="thumbnail" onclick="changeMainImage(this.src)">
+                    <img src="https://v0.dev/placeholder.svg?height=80&width=80" alt="Thumbnail 5" class="thumbnail" onclick="changeMainImage(this.src)">
                 </div>
             </div>
             <div class="product-info">
@@ -27,7 +312,6 @@
                 <p class="brand">Australian Gold</p>
                 <p class="price">$6.99</p>
 
-                <!-- Calificación de estrellas -->
                 <div class="rating">
                     <span class="star" data-value="1">★</span>
                     <span class="star" data-value="2">★</span>
@@ -36,14 +320,52 @@
                     <span class="star" data-value="5">★</span>
                 </div>
 
-                <div class="quantity">
-                    <button onclick="changeQuantity(-1)">-</button>
-                    <input type="number" id="quantity" value="1" min="1" max="999">
-                    <button onclick="changeQuantity(1)">+</button>
+                <div class="description">
+                    <h3>Descripción del Producto</h3>
+                    <p>
+                        La loción protectora Australian Gold SPF 30 proporciona una cobertura de amplio espectro, protegiendo tu piel de los dañinos rayos UVA y UVB. Enriquecida con extractos de ciruela Kakadu, esta fórmula antioxidante es ideal para todo tipo de piel, ofreciendo una protección duradera mientras hidrata y nutre tu piel.
+                    </p>
                 </div>
+
+                <div class="product-actions">
+                    <div class="quantity-control">
+                        <button class="quantity-btn" onclick="changeQuantity(-1)">-</button>
+                        <input type="number" id="quantity" value="1" min="1" max="999">
+                        <button class="quantity-btn" onclick="changeQuantity(1)">+</button>
+                    </div>
+                    
+                    <div class="buttons-container">
+                        <button class="add-to-cart">ADD TO CART</button>
+                        <span class="wishlist-heart" id="wishlist-heart">❤</span>
+                    </div>
+                </div>
+
                 <p class="max-quantity">The maximum quantity to purchase for this product is 999.</p>
-                <button class="add-to-cart">ADD TO CART</button>
-                <button class="add-to-wishlist">ADD TO WISHLIST</button>
+            </div>
+        </div>
+
+        <div class="comments-section">
+            <h3>Comentarios</h3>
+            <div class="comment-input">
+                <textarea id="comment" placeholder="Deja tu comentario aquí..." rows="3"></textarea>
+                <button class="submit-comment" onclick="submitComment()">Enviar</button>
+            </div>
+
+            <div class="comment-list" id="comment-list">
+                <div class="comment-item">
+                    <div class="comment-header">
+                        <div class="user-icon"></div>
+                        <div class="comment-username">Usuario123</div>
+                    </div>
+                    <div class="comment-text">Excelente producto, me encanta cómo deja mi piel. La textura es ligera y se absorbe rápidamente sin dejar residuos grasosos.</div>
+                </div>
+                <div class="comment-item">
+                    <div class="comment-header">
+                        <div class="user-icon"></div>
+                        <div class="comment-username">MariaG</div>
+                    </div>
+                    <div class="comment-text">Buena protección solar, ideal para el verano. He notado una gran diferencia en la protección de mi piel desde que empecé a usarlo.</div>
+                </div>
             </div>
         </div>
     </div>
@@ -56,9 +378,18 @@
             quantityInput.value = newQuantity;
         }
 
-        // Lógica para manejar la calificación de estrellas
         const stars = document.querySelectorAll('.star');
-        stars.forEach(star => {
+        stars.forEach((star, index) => {
+            star.addEventListener('mouseover', () => {
+                stars.forEach((s, i) => {
+                    s.classList.toggle('hover', i <= index);
+                });
+            });
+
+            star.addEventListener('mouseout', () => {
+                stars.forEach(s => s.classList.remove('hover'));
+            });
+
             star.addEventListener('click', () => {
                 const rating = star.getAttribute('data-value');
                 stars.forEach(s => {
@@ -67,6 +398,33 @@
                 alert(`Calificación seleccionada: ${rating} estrellas`);
             });
         });
+
+        const wishlistHeart = document.getElementById('wishlist-heart');
+        wishlistHeart.addEventListener('click', () => {
+            wishlistHeart.classList.toggle('active');
+        });
+
+        function changeMainImage(src) {
+            document.getElementById('main-image').src = src;
+        }
+
+        function submitComment() {
+            const commentText = document.getElementById('comment').value;
+            if (commentText.trim() !== '') {
+                const commentList = document.getElementById('comment-list');
+                const newComment = document.createElement('div');
+                newComment.className = 'comment-item';
+                newComment.innerHTML = `
+                    <div class="comment-header">
+                        <div class="user-icon"></div>
+                        <div class="comment-username">Usuario${Math.floor(Math.random() * 1000)}</div>
+                    </div>
+                    <div class="comment-text">${commentText}</div>
+                `;
+                commentList.prepend(newComment);
+                document.getElementById('comment').value = '';
+            }
+        }
     </script>
 </body>
 </html>
