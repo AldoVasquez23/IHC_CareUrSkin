@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Australian Gold SPF 30 Lotion</title>
+    <link rel="stylesheet" href="./assets/css/detalle_producto.css">
+</head>
+<body>
+    <div class="container">
+        <div class="breadcrumb">
+            Suncare / General Protection / SPF 30 / SPF 30 Lotion 3.4 Fl Oz
+        </div>
+        <div class="product">
+            <div class="product-images">
+                <img src="https://v0.dev/placeholder.svg?height=600&width=400" alt="Australian Gold SPF 30 Lotion" class="main-image">
+                <div class="thumbnails">
+                    <img src="https://v0.dev/placeholder.svg?height=80&width=80" alt="Thumbnail 1" class="thumbnail">
+                    <img src="https://v0.dev/placeholder.svg?height=80&width=80" alt="Thumbnail 2" class="thumbnail">
+                    <img src="https://v0.dev/placeholder.svg?height=80&width=80" alt="Thumbnail 3" class="thumbnail">
+                    <img src="https://v0.dev/placeholder.svg?height=80&width=80" alt="Thumbnail 4" class="thumbnail">
+                    <img src="https://v0.dev/placeholder.svg?height=80&width=80" alt="Thumbnail 5" class="thumbnail">
+                </div>
+            </div>
+            <div class="product-info">
+                <h1>SPF 30 Lotion 3.4 fl oz</h1>
+                <p class="brand">Australian Gold</p>
+                <p class="price">$6.99</p>
+
+                <!-- Calificación de estrellas -->
+                <div class="rating">
+                    <span class="star" data-value="1">★</span>
+                    <span class="star" data-value="2">★</span>
+                    <span class="star" data-value="3">★</span>
+                    <span class="star" data-value="4">★</span>
+                    <span class="star" data-value="5">★</span>
+                </div>
+
+                <div class="quantity">
+                    <button onclick="changeQuantity(-1)">-</button>
+                    <input type="number" id="quantity" value="1" min="1" max="999">
+                    <button onclick="changeQuantity(1)">+</button>
+                </div>
+                <p class="max-quantity">The maximum quantity to purchase for this product is 999.</p>
+                <button class="add-to-cart">ADD TO CART</button>
+                <button class="add-to-wishlist">ADD TO WISHLIST</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeQuantity(amount) {
+            const quantityInput = document.getElementById('quantity');
+            let newQuantity = parseInt(quantityInput.value) + amount;
+            newQuantity = Math.max(1, Math.min(newQuantity, 999));
+            quantityInput.value = newQuantity;
+        }
+
+        // Lógica para manejar la calificación de estrellas
+        const stars = document.querySelectorAll('.star');
+        stars.forEach(star => {
+            star.addEventListener('click', () => {
+                const rating = star.getAttribute('data-value');
+                stars.forEach(s => {
+                    s.classList.toggle('active', s.getAttribute('data-value') <= rating);
+                });
+                alert(`Calificación seleccionada: ${rating} estrellas`);
+            });
+        });
+    </script>
+</body>
+</html>

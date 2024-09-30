@@ -1,0 +1,166 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f5f5f5;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.breadcrumb {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.product {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.product-images {
+    flex: 1;
+    min-width: 300px;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.main-image:hover {
+    transform: scale(1.05);
+}
+
+.thumbnails {
+    display: flex;
+    gap: 10px;
+}
+
+.thumbnail {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+    border-color: #4CAF50;
+}
+
+.product-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+h1 {
+    margin: 0 0 10px 0;
+    font-size: 2em;
+    font-weight: 600;
+    color: #333;
+}
+
+.brand {
+    color: #999;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.quantity input {
+    width: 60px;
+    text-align: center;
+    margin: 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 1.1em;
+}
+
+.max-quantity {
+    font-size: 0.85em;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* Estilos de las estrellas */
+.rating {
+    margin-bottom: 20px;
+}
+
+.star {
+    font-size: 2em;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.star.active,
+.star:hover {
+    color: #FFD700; /* Color dorado */
+}
+
+/* Estilos para los botones */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.add-to-cart {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.add-to-cart:hover {
+    background-color: #45A049;
+}
+
+.add-to-wishlist {
+    background-color: white;
+    color: #4CAF50;
+    border: 2px solid #4CAF50;
+}
+
+.add-to-wishlist:hover {
+    background-color: #f9f9f9;
+}
