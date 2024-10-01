@@ -1,0 +1,42 @@
+<!-- cart.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.17.2/firebase-auth-compat.js"></script>
+
+    <title>Carrito de Compras</title>
+</head>
+<body>
+    <h1>Carrito de Compras</h1>
+    <ul id="cart-items"></ul>
+    <h3>Total: $<span id="cart-total">0</span></h3>
+
+    <script src="firebase-config.js"></script>
+    <script>
+      const userId = auth.currentUser ? auth.currentUser.uid : 'anonimo';
+
+      database.ref('cart/' + userId).on('value', (snapshot) => {
+        const cartItems = snapshot.val();
+        const cartList = document.getElementById('cart-items');
+        let total = 0;
+        cartList.innerHTML = '';
+
+        for (let itemId in cartItems) {
+          const item = cartItems[itemId];
+          const li = document.createElement('li');
+          li.textContent = `${item.product} - $${item.price} x ${item.quantity}`;
+          cartList.appendChild(li);
+          total += item.price * item.quantity;
+        }
+
+        document.getElementById('cart-total').textContent = total.toFixed(2);
+      });
+    </script>
+    
+</body>
+</html>

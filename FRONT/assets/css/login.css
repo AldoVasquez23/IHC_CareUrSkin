@@ -98,7 +98,7 @@ button {
   top: 0;
   width: 100%;
   height: 100%;
-  background: hsla(34, 47%, 6%, 0.664);
+  background: #1b4b1b94;
 }
 .cont.s--signup .img:before {
   transform: translate3d(640px, 0, 0);
@@ -202,7 +202,8 @@ input {
   margin-top: 5px;
   padding-bottom: 5px;
   font-size: 16px;
-  border-bottom: 1px solid #a57735;
+  border-bottom: 1px solid #1b491b;
+  color:#3baa3b;
   text-align: center;
 }
 
@@ -210,13 +211,13 @@ input {
   margin-top: 15px;
   text-align: center;
   font-size: 13px;
-  color: #e99c2e;
+  color: #3baa3b;
 }
 
 .submit {
   margin-top: 40px;
   margin-bottom: 20px;
-  background: #e99c2e;
+  background: #3baa3b;
   text-transform: uppercase;
 }
 
